@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Client
 {
@@ -48,12 +44,10 @@ namespace Client
 
             public void fillArray(ref Client[] client)
             {
-                
             }
         }
 
-
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //Описать структуру Client содержащую поля: код клиента; ФИО; адрес; телефон;
             //количество заказов осуществленных клиентом;общая сумма заказов клиента.
@@ -62,7 +56,7 @@ namespace Client
             var random = new Random();
 
             Client[] client = new Client[3];
-          
+
             for (int i = 0; i < client.Length; i++)
             {
                 client[i] = new Client("Petrov" + i, "Izhevsk", random); //заполним какими-то клиентами
@@ -74,9 +68,12 @@ namespace Client
                 Console.WriteLine("Введите номер клиента (для выхода 0)");
                 number = int.Parse(Console.ReadLine());
                 number--;
+
                 if (number == -1)
                     break;
+
                 Console.Write("Сумма заказа: ");
+
                 client[number].TotalSum = int.Parse(Console.ReadLine());
 
                 foreach (var item in client)
